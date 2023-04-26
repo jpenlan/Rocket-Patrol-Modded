@@ -48,7 +48,7 @@ class Play extends Phaser.Scene {
         this.p1Score = 0;
 
         // Display score
-        let scoreConfig = {
+        this.scoreConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
             backgroundColor: '#F3B141',
@@ -60,21 +60,55 @@ class Play extends Phaser.Scene {
             },
             fixedWidth: 100 
             }
-            this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding * 2, this.p1Score, scoreConfig);
+            this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding * 2, this.p1Score, this.scoreConfig);
+        this.scoreConfig.fixedWidth = 0;
+
+
+        // Initialize timer
+        this.counter = game.settings.gameTimer / 1000;
+        this.startTime = this.time.now; // Resets every 1000 milliseconds
+
+        // Display timer
+        this.timerConfig = {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100 
+            }
+            this.timeLeft = this.add.text(borderUISize + borderPadding * 44, borderUISize + borderPadding * 2, this.counter, this.timerConfig);
+            this.timerConfig.fixedWidth = 0;
 
             // GAME OVER flag
             this.gameOver = false;  
 
-            // Track 60 second timer
-            scoreConfig.fixedWidth = 0;
-            this.clock = this.time.delayedCall(60000, () => {
-                this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
-                this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- to Menu', scoreConfig).setOrigin(0.5);
-                this.gameOver = true;
-            }, null, this);
+
         }
 
         update() {
+
+            // Adaptive timer
+            let nowTime = this.time.now
+            if(nowTime > (this.startTime + 1000)) {
+                this.counter -= 1;
+                this.startTime = nowTime
+                console.log(this.counter);
+                this.timeLeft.text = this.counter;
+            }
+            
+            // Displays game over at time end
+            if (this.counter == 0) {
+                console.log('test');
+                this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', this.scoreConfig).setOrigin(0.5);
+                this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- to Menu', this.scoreConfig).setOrigin(0.5);
+                this.gameOver = true;
+            }
+
             // Check key input for restart
             if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
                 this.scene.restart();
@@ -127,8 +161,9 @@ class Play extends Phaser.Scene {
                 boom.destroy(); // Remove explosion sprite
             });
 
-            // Score add and repaint
+            // Score add, add to the time, and repaint
             this.p1Score += ship.points;
+            this.counter += 3;
             this.scoreLeft.text = this.p1Score;
 
             this.sound.play('sfx_explosion');
