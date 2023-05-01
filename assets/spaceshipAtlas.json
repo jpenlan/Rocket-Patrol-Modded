@@ -1,0 +1,96 @@
+{ "frames": [
+   {
+    "filename": "spaceshipAtlas 00.ase",
+    "frame": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 01.ase",
+    "frame": { "x": 63, "y": 0, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 02.ase",
+    "frame": { "x": 126, "y": 0, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 03.ase",
+    "frame": { "x": 0, "y": 32, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 04.ase",
+    "frame": { "x": 63, "y": 32, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 05.ase",
+    "frame": { "x": 0, "y": 32, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 06.ase",
+    "frame": { "x": 126, "y": 0, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 07.ase",
+    "frame": { "x": 63, "y": 0, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "spaceshipAtlas 08.ase",
+    "frame": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 32 },
+    "sourceSize": { "w": 63, "h": 32 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.40-x64",
+  "image": "spaceshipAtlas-sheet.png",
+  "format": "I8",
+  "size": { "w": 189, "h": 64 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "slices": [
+  ]
+ }
+}
